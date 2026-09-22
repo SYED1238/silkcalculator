@@ -557,11 +557,20 @@ export function NotebookEntryTable({
                           <button
                             onClick={() => onEditEntry(entry)}
                             type="button"
-                            className="px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs flex items-center gap-1 transition-colors touch-manipulation active:scale-95"
-                            title="Edit entry (Requires password)"
+                            className="px-2.5 sm:px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs flex items-center gap-1 transition-colors touch-manipulation active:scale-95"
+                            title="Edit entry (Requires code 0000)"
                           >
                             <Edit2 className="w-3.5 h-3.5" />
                             <span>Edit</span>
+                          </button>
+                          <button
+                            onClick={() => onDeleteEntry(entry)}
+                            type="button"
+                            className="px-2.5 sm:px-3 py-1.5 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-700 hover:text-rose-800 border border-rose-200 font-bold text-xs flex items-center gap-1 transition-colors touch-manipulation active:scale-95"
+                            title="Delete entry (Requires code 0000)"
+                          >
+                            <Trash2 className="w-3.5 h-3.5 text-rose-600" />
+                            <span>Delete</span>
                           </button>
                         </div>
                       </td>

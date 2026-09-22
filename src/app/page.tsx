@@ -115,13 +115,8 @@ export default function SilkLedgerPage() {
   const handleDeleteClick = (entry: SilkEntry) => {
     promptPin(
       `Delete Entry #${String(entry.entry_number).padStart(3, '0')}`,
-      'Enter password (0000) to confirm deletion',
+      'Enter code 0000 to confirm deletion',
       async (pwd: string) => {
-        const confirmDelete = window.confirm(
-          `Are you sure you want to delete Entry #${String(entry.entry_number).padStart(3, '0')}?\nThis action cannot be undone.`
-        );
-        if (!confirmDelete) return;
-
         try {
           const res = await fetch(`/api/entries/${entry.id}`, {
             method: 'DELETE',
